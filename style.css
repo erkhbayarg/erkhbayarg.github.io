@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(99, 97, 97);
+    color: floralwhite;
+}
+
+h1, h2 {
+    color:rgb(95, 162, 240);
+}
+
+dt, dd {
+    font-size: 12px;
+}
+
+em {
+    color: rgb(226, 181, 68);
+    
+}
+a.movie {
+    color: rgb(196, 61, 61);
+}
+
+div.movies li dl {
+    display: none;
+}
+  
+  /* make visible ul that is direct child of any descendent hovered li under div.menu-bar */
+div.movies li:hover > dl {
+    display: block;
+}
+
+/* Footer stylesheet */
+.footer {
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    padding: 10px;
+    background-color: rgb(99, 97, 97);
+}
+
+.footer-onBottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .siteInfo {
+    float: left;
+}
+
+.footer .w3cValidator {
+    float: right;
+    padding-right: 30px;
+}
