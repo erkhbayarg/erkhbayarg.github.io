@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .header {
+        padding: 5px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+      }
+
+      /* Style the top navigation bar */
+      .navbar {
+        display: flex;
+        background-color: #333;
+      }
+
+      /* Style the navigation bar links */
+      .navbar a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .part1 {
+        background-color: rgba(125, 125, 155, 0.356);
+        padding: 40px;
+        width:30%;
+        float:left;
+      }
+
+      .part2 {
+        background-color: rgba(77, 90, 77, 0.253);
+        padding: 40px;
+        width:40%;
+        float:left;
+      }
+
+      .part3 {
+        background-color: rgb(192, 203, 233);
+        padding: 40px;
+      }
+
+
+      .footer {
+        padding: 5px;
+        text-align: center;
+        background: #ddd;
+      }
+
+      @media screen and (max-width: 700px) {
+        .part2 {   
+          clear:both;
+          width:100%;
+        }
+        
+        .part1 {
+          width:50%;
+        }        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Header</h1>
+    </div>
+    
+    <div class="navbar">
+      <a href="#">Menu1</a>
+      <a href="#">Menu2</a>
+      <a href="#">Menu3</a>
+    </div>
+    
+    <div class="row">
+      <div class="part1">
+        <p>Column1</p>
+      </div>
+      <div class="part2">
+        <p>Column2</p>  
+      </div>
+      <div class="part3">
+      <p>Column3</p>  
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
+  </body>
+</html>

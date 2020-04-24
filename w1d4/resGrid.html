@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+      box-sizing: border-box;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-gap: 5px;
+      padding: 10px;
+    }
+
+    .part1 {
+      background-color: rgb(192, 203, 233);
+      padding: 40px;
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .part2 {
+      background-color: rgb(192, 203, 233);
+      padding: 40px;
+      grid-column: 2 / span 3;
+      grid-row: 3;
+    }
+
+    .part3 {
+      background-color: rgb(192, 203, 233);
+      padding: 40px;
+      grid-column: 4;
+      grid-row: 3;
+      width:100%;
+    }
+
+
+    /* Header/logo Title */
+    .header {
+      grid-column: 1 / span 4; 
+      grid-row: 1;
+      padding: 5px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+
+    .navbar {
+      grid-column: 1 / span 4; 
+      display: flex;
+      background-color: #333;
+      grid-row: 2;
+    }
+
+    /* Style the navigation bar links */
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .footer {
+      grid-column: 1 / span 4; 
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      grid-row: 4;
+      
+    }
+
+    @media screen and (max-width: 700px) {
+      
+      .part1 {
+        background-color: rgb(192, 203, 233);
+        padding: 40px;
+        grid-column: 1;
+        grid-row: 3;
+      }
+      
+      .part3 {
+        background-color: rgb(192, 203, 233);
+        padding: 40px;
+        grid-column: 2;
+        grid-row: 3;
+      }
+      
+      .part2 {
+        background-color: rgb(192, 203, 233);
+        padding: 40px;
+        grid-column: 1 / span 4;
+        grid-row: 4;
+      }
+      
+      .footer {
+        grid-column: 1 / span 4;
+        grid-row: 5;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item header">
+        <h1>Header</h1>
+      </div>
+    
+      <div class="grid-item navbar">
+        <a href="#">Menu1</a>
+        <a href="#">Menu2</a>
+        <a href="#">Menu3</a>
+      </div>
+      <div class="grid-iterm part1"><p>Column1</p></div>
+      <div class="grid-iterm part2"><p>Column2</p></div>
+      <div class="grid-iterm part3"><p>Column3</p></div>
+      
+      <!-- Footer -->
+      <div class="grid-item footer">
+        <h2>Footer</h2>
+      </div>  
+    </div>
+  </body>
+</html>
