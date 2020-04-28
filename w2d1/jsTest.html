@@ -27,46 +27,6 @@
 				return "TEST FAILED.  Expected " + expected + " found " + found;
 			}
 		}
-
-
-		/* max returns the maximum of 2 arguments */
-		function max(a, b) {			
-			if (a > b) {
-				return a;
-			} else {
-				return b;
-			};
-		}
-		console.log("Q2. Expected output of max(20,10) is 20  " + myFunctionTest(20, max(20, 10)));
-
-		/* max3 takes 3 numbers as arguments and returns the largest */
-		function maxOfThree(a, b, c) {
-			var ret = a;
-			m = [a,b,c];
-			for (i = 1; i < m.length; i++) {
-				if (m[i] > ret) {
-					ret = m[i]; 
-				}
-			}
-			
-			return ret;
-		}
-		
-		console.log("Q3. Expected output of maxOfThree(5,4,44) is 44  " + myFunctionTest(44, maxOfThree(5, 4, 44)));
-		console.log("Q3. Expected output of maxOfThree(55,4,44) is 55  " + myFunctionTest(4, maxOfThree(55, 4, 44)));
-		
-		/* q4 is vowel*/
-		function isVowel(c) {
-			if (c.length > 1) {
-				return false;
-			}
-			
-			return ['a', 'o', 'y', 'e', 'i', 'u'].indexOf(c.toLowerCase()) !== -1;
-		}
-
-		console.log("Q4. Expected output of isVowel(a) is true  " + myFunctionTest(true, isVowel('a')));
-		console.log("Q4. Expected output of isVowel(b) is false  " + myFunctionTest(false, isVowel('b')));
-		console.log("Q4. Expected output of isVowel(yy) is false  " + myFunctionTest(true, isVowel('yy')));
 		
 		/* q5 sum and multiple*/
 		function sum (a) {
