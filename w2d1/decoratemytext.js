@@ -28,11 +28,17 @@ function onLoadFunction(){
 		}
 	}
 	
-	document.getElementById("iqpayBtn").onchange = function(){
-
+	document.getElementById("iqpayBtn").onclick = function(){
+		var txt = document.getElementById("iqpayTxt").value;
+		var spn = document.getElementById("iqpaySpan");
+		let firstMatch = txt.match(/[aeiou]/g) || 0;
+		let vowel = txt.indexOf(firstMatch[0]);
+		
+		newStr = txt.substring(vowel) + txt.substring(0, vowel) + "ay";
+		spn.innerHTML = newStr;
 	}
 	
-	document.getElementById("malkovBtn").onchange = function(){
+	document.getElementById("malkovBtn").onclick = function(){
 
 		
 	}
