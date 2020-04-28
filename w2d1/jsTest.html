@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
     <meta charset="UTF-8">
     <title>Title</title>
-    
-	</head>
-	<body>
-		Java Script Test
-	</body>
-
-	<script>
+    <script>	
 		/* runs test to see if expected argument is === to value returned by function2test argument */
 		function myFunctionTest(expected, found) {
 			if (expected === found) {
@@ -29,108 +23,36 @@
 		}
 		
 		/* q5 sum and multiple*/
-		function sum (a) {
-			/*sum = 0;
-			for (let i = 0; i < a.length; i++) {
-				sum += a[i];
-			}
-			return sum;*/
-					
-			const reducer = (accumulator, currentValue) => accumulator + currentValue;
-			console.log("Q5 : " + a.reduce(reducer));	
-			return reducer;
-		}
 		
-		function multiple (a) {
-			/*let  mul = 1;
-			for (let i = 0; i < a.length; i++) {
-				mul *= a[i];
-			}
-			
-			return mul;*/
-					
-			const reducer = (accumulator, currentValue) => accumulator * currentValue;
-			console.log("Q5 : " + a.reduce(reducer));	
-			return reducer;
-		}
-		
-		/*console.log(x.reduce(multiple));*/
 		var x = [2, 4, 6];	
-		sum(x);
-		multiple(x);
-		/*console.log("Q5. Expected output of sum(2, 4, 6) is 12  " + myFunctionTest(12, sum(x)));
-		console.log("Q5. Expected output of multiple(2, 4, 6) is 48  " + myFunctionTest(48, multiple(x)));*/
+		const reducer1 = x.reduce((acc, elem) => acc + elem);
+		const reducer2 = x.reduce((acc, elem) => acc * elem);
 		
-		
+		console.log("Q5. Expected output of sum(2, 4, 6) is 12  " + myFunctionTest(12, reducer1));
+		console.log("Q5. Expected output of multiple(2, 4, 6) is 48  " + myFunctionTest(48, reducer2));
 		
 		/*q6 reverse*/
-		function reserve(a) {
-			let res = "";
-			
-			for (let i = a.length - 1; i >= 0; i--) {
-				res = res + a.charAt(i);
-			}
-			
-			return res;
-			//return a.split("").reverse().join("");
-		}
-		console.log("Q6. Expected output of reserve(jag testar) is ratset gaj  " + myFunctionTest("ratset gaj", reserve("jag testar")));
-		console.log("Q6. Expected output of reserve(test) is ratset tset  " + myFunctionTest("test", reserve("test")));
 		
-		/*Q7. findLongestWord*/
-		function longestWord(a) {
-			let longest = a[0];
-			for (let i = a.length - 1; i >=0; i--) {
-				if (a[i].length > longest.length) {
-					longest = a[i];
-				}
-			}
-			
-			return longest;
-		}
+		var x = "jag testar";
+		const ret1 = x.split("").reverse().join("");	
+		console.log("Q6. Expected output of reserve(jag testar) is ratset gaj  " + myFunctionTest("ratset gaj", ret1));
+		
+		/*Q7. findLongestWord */
 		
 		var x = ["aa", "bbb", "cccc", "d"];
-		console.log("Q7. Expected output of longestWord(aa, bbb, cccc, d) is cccc  " + myFunctionTest("cccc", longestWord(x)));
-		console.log("Q7. Expected output of longestWord(aa, bbb, cccc, d) is d  " + myFunctionTest("d", longestWord(x)));
+		const longest = x.reduce((acc, elem) => acc.length > elem.length ? acc : elem );
+		console.log("Q7. Expected output of longestWord(aa, bbb, cccc, d) is cccc  " + myFunctionTest("cccc", longest)); 
 		
 		/*Q8.  */
-		function filterLongWords(a , b){
-			var toReturn = [];
-
-			for (var i = a.length - 1; i >= 0; i--) {
-				if (a[i].length > b){
-					toReturn.push(a[i]);
-				}
-			}
-			return toReturn;		
-		}
 		
-		var x = ["aa", "bbb", "cccc", "d"];
-		var x1 = ["cccc", "bbb"];
-		console.log("Q8. Expected output of longestWord(aa, bbb, cccc, d) is cccc, bbb  " + myFunctionArrayTest(x1, filterLongWords(x, 2)));
-		
-		/*Q9. map/filter/reduce*/
-		function array1(a) {
-			return a.map(function(elem, i, array) {
-				return elem * 10;
-			});
-		}
-		
-		function array2(a) {
-			return a.filter(function(elem, i, array){
-				return elem === 3;
-			});
-		}
-		
-		function array3(a) {
-			return a.reduce(function(prevValue, elem, i, array){
-				return prevValue+ elem;
-			}, 0);
-		}
-		
-		var x = [2, 4, 6];
-		console.log("Q9 multiply each element by 10 :  " + array1(x));
-		console.log("Q9 all elements equal to 3 : " + array2(x));
-		console.log("Q9 product of all elements : " + array3(x));
+		var x = ["aa", "bbb", "cccc", "d"];	
+		var ret = x.filter(elem => elem.length > 2);		
+		console.log("Q8. Expected output of longestWord(aa, bbb, cccc, d) is cccc, bbb  " + myFunctionArrayTest(x, ret));  
 	</script>
+	</head>
+	<body>
+		Java Script Test
+	</body>
+
+	
 </html>
