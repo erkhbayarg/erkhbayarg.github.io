@@ -1,6 +1,6 @@
-const timer = null;
-const index = 0;
-const speed = 150;
+var timer = null;
+var index = 0;
+var speed = 150;
 
 window.onload = function() {
 	"use strict";
