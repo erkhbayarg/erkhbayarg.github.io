@@ -6,7 +6,7 @@
 		
 		describe('reverseArray ', () => {
 			it("returns the string reverseArray", () => {
-				expect(reverseArray(["A", "B", "C"])).equal(["C", "B", "A"]);
+				expect(reverseArray(["A", "B", "C"])).toEqual(["C", "B", "A"]);
 			});
 		}); 
 	});	
