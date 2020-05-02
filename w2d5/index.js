@@ -20,11 +20,22 @@
 			});
 		}); 
 		
+		describe('test teacher object ', () => {
+			context("Teacher -> Person inheritance ", function() {
+				it("David is teaching WAP", () => {
+					var teacher = new Teacher();
+					teacher.initialize('David', '50');				
+
+					expect(teacher.teach('WAP')).toEqual("David is teaching WAP");
+				});
+			});
+		}); 
+		
 	});		
 	
 }());
 
-
+/*--------------------- Problem1---------------------*/
 String.prototype.filter = function (str) {
   var res = this.split(" ");
   for (let i = 0; i < str.length; i++) {    
@@ -35,6 +46,7 @@ String.prototype.filter = function (str) {
 
 // var aa = 'This house is not nice'.filter(['This', 'not']); 
 
+/*--------------------- Problem2---------------------*/
 Array.prototype.bubbleSort = function () {
   let temp = 0;
   let n = this.length;
@@ -56,3 +68,38 @@ Array.prototype.bubbleSort = function () {
 for (let i = 0; i < aa.length; i++) {
   console.log(aa[i]);
 }*/
+
+/*--------------------- Problem3---------------------*/
+var Person  = function(){
+};
+Person.prototype.initialize = function(name,age) {
+  this.name =name;
+  this.age =age;
+}
+Person.prototype.describe = function() {
+  return this.name + ", "+this.age +" years old.";
+}
+
+var Student = function() {
+};
+Student.prototype = new Person();
+Student.prototype.learn = function(subject) {
+  console.log(this.name +" just learned "+subject);
+}
+var me = new Student();
+me.initialize("John",25);
+me.learn("Inheritance");
+
+
+var Teacher = function(){
+};
+Teacher.prototype = new Person();
+Teacher.prototype.teach = function(subject) {
+  console.log(this.name +" is teaching "+subject);
+};
+
+/*var teacher = new Teacher();
+teacher.initialize('David', '50');
+teacher.teach('WAP');*/
+
+
