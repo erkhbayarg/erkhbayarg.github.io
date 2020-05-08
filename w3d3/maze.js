@@ -1,35 +1,33 @@
 $(document).ready(function(){
+	var started = false;
+	var win = false;
 
-	var gameStart = false;
-	var lost = false;
-
-	function lose(){
-		if(!gameStart) return "";
-		lost = true;
-		$(".hoverError").css("background-color","#f44256");
-		$("#status").text("you lost, try again by click on 'S'");
+	function lose() {
+		if (started) {
+			win = false;
+			$(".boundary").addClass('youlose');
+			$("#status").text("You lose");
+		}
+		
 	}
 
 	$("#start").click(function(){
-		gameStart=true;
-		lost=false;
-		$(".hoverError").removeAttr("style");
-
-		$("#status").text("Game start");
-		$(".boundary").addClass("hoverError");
+		started = true;
+		win = true;
+		$(".boundary").removeClass("youlose");
+		$(".boundary").removeClass("youwin");
+		$("#status").text("Game Started");
 	});
 
-	$(".boundary").hover( lose);
-	$("#maze").mouseleave(lose);
-
-	$("#end").hover(function(){
-
-		if (!gameStart || lost) return "";
-
-		$(".hoverError").css("background-color","#42f477");
-		$("#status").text("you Win :)");
-
-		gameStart=false;
+	$("#end").mouseenter(function(){		
+		if (started && win) {
+			$("#status").text("You win");
+			$(".boundary").addClass('youwin');
+		}
+		started = false;
 	})
+
+	$(".boundary").hover(lose);
+	$("#maze").mouseleave(lose);
 
 });
