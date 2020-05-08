@@ -1,0 +1,27 @@
+#forms {
+	flex-direction: column;
+	display: flex;
+} 
+
+input {
+  width: 250px;
+  margin: 2px;
+}
+
+button {
+  width: 150px;
+}
+
+.circle {
+	background: lightblue;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+
+#circles {
+	flex-direction: row;
+	display: flex;
+}
+
+
